@@ -1,0 +1,68 @@
+function main
+    initialize_interface ()
+    initialize_gamedata ()
+    game_loop ()
+end function
+
+function initialize_interface
+    start_ncurses ()
+    load_keymap ()
+end function
+
+function initialize_gamedata ()
+    load_item_db ()
+    load_monster_db ()
+
+    if SAVEGAME
+        load_pc ()
+        load_map ()
+    else
+        create_pc ()
+        create_map ()
+    end if
+    load_map ()
+end function
+
+function game_loop
+    loop FOREVER
+        draw_map ()
+
+        get_command ()
+        execute_command ()
+
+        monster_actions ()
+        npc_actions ()
+    end loop
+end function
+
+function load_item_db ()
+    // Read Item DB from file into memory
+end function
+
+function load_monster_db ()
+    // Read Monster DB from file into memory
+end function
+
+function load_pc ()
+    // Read PC from file into memory
+end function
+
+function create_pc ()
+    // Create PC data based on player input
+
+    load_sprite (PC_TYPE)
+end function
+
+function load_sprite (character_type)
+    switch (character_type)
+        case CTYPE_1
+            // Load CTYPE_1 sprite
+        case CTYPE_2
+            // Load CTYPE_2 sprite
+    end switch
+end function
+
+function create_map ()
+    // Create random map
+end function
+

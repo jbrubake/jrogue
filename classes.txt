@@ -1,0 +1,31 @@
+CLASS                     DATA        METHODS
+=============================================
+Game            
+
+Interface
+
+  Curses_Interface
+
+  SDL_Interface
+
+Creature
+
+  Monster
+
+  Character
+
+    NPC
+
+    PC
+
+Item
+
+Map
+
+  Dungeon
+
+  Overworld
+
+Effect
+
+  

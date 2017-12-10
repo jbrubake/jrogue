@@ -1,0 +1,6 @@
+*.d
+*.o
+*.exe
+jrogue
+.depend
+tags
