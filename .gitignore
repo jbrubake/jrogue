@@ -3,5 +3,4 @@
 *.exe
 jrogue
 .depend
-tags
 cscope.out
