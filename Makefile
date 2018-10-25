@@ -1,6 +1,7 @@
 CC := gcc
 LINT := splint
 CTAGS := ctags
+CSCOPE := cscope
 RM := rm
 MKDEPEND := $(CC) -MM
 
@@ -16,6 +17,8 @@ EXE :=
 PROGNAME := jrogue$(EXE)
 COREFILE := 
 
+TAGFILE := .git/tags
+
 all: $(SOURCES) $(PROGNAME)
 
 $(PROGNAME): $(OBJECTS)
@@ -28,7 +31,10 @@ depend: $(SOURCES) $(HEADERS)
 	$(MKDEPEND) $(SOURCES) > .depend
 
 TAGS:
-	$(CTAGS) *
+	$(CTAGS) -f $(TAGFILE) -R *
+
+cscope:
+	$(CSCOPE) -R -b
 
 lint: $(SOURCES) $(HEADERS)
 	$(LINT) $(SOURCES)
