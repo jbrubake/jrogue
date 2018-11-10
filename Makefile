@@ -17,8 +17,6 @@ EXE :=
 PROGNAME := jrogue$(EXE)
 COREFILE := 
 
-TAGFILE := .git/tags
-
 all: $(SOURCES) $(PROGNAME)
 
 $(PROGNAME): $(OBJECTS)
@@ -31,7 +29,7 @@ depend: $(SOURCES) $(HEADERS)
 	$(MKDEPEND) $(SOURCES) > .depend
 
 TAGS:
-	$(CTAGS) -f $(TAGFILE) -R *
+	$(CTAGS) -R *
 
 cscope:
 	$(CSCOPE) -R -b
